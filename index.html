@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOSI Music - Vos Articles de Musique</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>🎵 KOSI Music</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#accueil" class="active" data-translate="nav_home">Accueil</a></li>
+                    <li><a href="#produits" data-translate="nav_products">Nos Instruments</a></li>
+                    <li><a href="#apropos" data-translate="nav_about">À Propos</a></li>
+                    <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
+                    <li class="language-switcher">
+                        <button class="lang-btn active" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+                        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-wrapper">
+                    <div class="hero-content">
+                        <h1 class="hero-title" data-translate="hero_title">Bienvenue chez KOSI Music</h1>
+                        <p class="hero-subtitle" data-translate="hero_subtitle">Découvrez notre collection d'instruments et accessoires musicaux de qualité</p>
+                        <div class="hero-buttons">
+                            <a href="#produits" class="btn btn-primary" data-translate="hero_btn_explore">Explorer nos produits</a>
+                            <a href="https://wa.me/225XXXXXXXXXX" target="_blank" class="btn btn-whatsapp" id="hero-whatsapp" data-translate="hero_btn_whatsapp">
+                                💬 WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600&q=80" alt="Studio de musique" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Gallery Section -->
+    <section class="products-section" id="produits">
+        <div class="container">
+            <h2 class="section-title" data-translate="products_title">Nos Instruments Disponibles</h2>
+            <p class="products-subtitle" data-translate="products_subtitle">Contactez-nous pour plus d'informations</p>
+            <div class="products-list">
+                <!-- Guitare Électrique -->
+                <div class="product-item">
+                    <div class="product-icon">🎸</div>
+                    <h3 data-translate="product_1_name">Guitare Électrique</h3>
+                    <p data-translate="product_1_desc">Guitare électrique professionnelle avec son exceptionnel</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Piano Numérique -->
+                <div class="product-item">
+                    <div class="product-icon">🎹</div>
+                    <h3 data-translate="product_2_name">Piano Numérique</h3>
+                    <p data-translate="product_2_desc">Piano numérique 88 touches avec effets intégrés</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Batterie Électronique -->
+                <div class="product-item">
+                    <div class="product-icon">🥁</div>
+                    <h3 data-translate="product_3_name">Batterie Électronique</h3>
+                    <p data-translate="product_3_desc">Batterie électronique complète avec pads sensibles</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Microphone Studio -->
+                <div class="product-item">
+                    <div class="product-icon">🎤</div>
+                    <h3 data-translate="product_4_name">Microphone Studio</h3>
+                    <p data-translate="product_4_desc">Microphone à condensateur pour enregistrement professionnel</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Casque Audio Pro -->
+                <div class="product-item">
+                    <div class="product-icon">🎧</div>
+                    <h3 data-translate="product_5_name">Casque Audio Pro</h3>
+                    <p data-translate="product_5_desc">Casque audio professionnel avec réduction de bruit</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Interface Audio -->
+                <div class="product-item">
+                    <div class="product-icon">🎛️</div>
+                    <h3 data-translate="product_6_name">Interface Audio</h3>
+                    <p data-translate="product_6_desc">Interface audio USB 2 canaux pour home studio</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Violon Acoustique -->
+                <div class="product-item">
+                    <div class="product-icon">🎻</div>
+                    <h3 data-translate="product_10_name">Violon Acoustique</h3>
+                    <p data-translate="product_10_desc">Violon acoustique 4/4 avec étui et archet</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Saxophone Alto -->
+                <div class="product-item">
+                    <div class="product-icon">🎷</div>
+                    <h3 data-translate="product_11_name">Saxophone Alto</h3>
+                    <p data-translate="product_11_desc">Saxophone alto professionnel en laiton</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+                
+                <!-- Enceintes Studio -->
+                <div class="product-item">
+                    <div class="product-icon">🔊</div>
+                    <h3 data-translate="product_12_name">Enceintes Studio</h3>
+                    <p data-translate="product_12_desc">Paire d'enceintes monitoring pour studio</p>
+                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                </div>
+        </div>
+    </section>
+
+    <!-- Instruments Gallery Images -->
+    <section class="images-gallery-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="gallery_images_title">Galerie d'Instruments</h2>
+            <p class="gallery-images-subtitle" data-translate="gallery_images_subtitle">Découvrez quelques instruments de musique</p>
+            <div class="images-gallery-grid">
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.40.12_8c6b621a.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.40.13_117752ed.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.40.13_5aeafeb6.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.44.42_ca82312a.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.26.58_664d29e7.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_17be6d7b.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_304abf84.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_51a2f2b7.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_4d9b1410.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_57eebf53.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_e4a0a928.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_93657aa9.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_953b3eff.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_e7f690c5.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_f8eb515b.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_4e2257b9.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_6e104a13.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_6fe50b05.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.04_5e59da8e.jpg" alt="Instrument">
+                </div>
+                <div class="gallery-image-item">
+                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.04_8fc2e9a1.jpg" alt="Instrument">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="apropos">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-translate="about_title">À Propos de KOSI Music</h2>
+                    <p data-translate="about_text_1">KOSI Music est votre destination privilégiée pour tous vos besoins musicaux. Nous offrons une sélection soigneusement choisie d'instruments, d'accessoires et d'équipements audio de haute qualité.</p>
+                    <p data-translate="about_text_2">Notre passion pour la musique nous pousse à fournir les meilleurs produits à nos clients, qu'ils soient débutants ou professionnels.</p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span data-translate="feature_1">Produits de qualité</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span data-translate="feature_2">Magasin à Adjamé, Rue E14</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span data-translate="feature_3">Contact direct via WhatsApp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80" alt="Personne avec écouteurs" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-translate="contact_title">Contactez-nous</h2>
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" data-translate="form_name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-translate="form_phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+225 XX XX XX XX XX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-translate="form_email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-translate="form_message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-primary" data-translate="form_submit">Envoyer par Email</button>
+                        <button type="button" class="btn btn-whatsapp" id="sendWhatsAppBtn">
+                            <span data-translate="send_whatsapp">💬 Envoyer via WhatsApp</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="contact-info">
+                    <h3 data-translate="contact_info_title">Informations de contact</h3>
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <span>Adjamé, Rue E14<br>Abidjan, Côte d'Ivoire</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📞</span>
+                        <span id="phone-number">+225 XX XX XX XX XX</span>
+                    </div>
+                    <div class="info-item whatsapp-item">
+                        <span class="icon">💬</span>
+                        <a href="https://wa.me/225XXXXXXXXXX" target="_blank" class="whatsapp-link" id="whatsapp-link" data-translate="whatsapp_text">
+                            Contactez-nous sur WhatsApp
+                        </a>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📧</span>
+                        <span id="email-display">contact@kosimusic.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KOSI Music</h3>
+                    <p data-translate="footer_tagline">Votre partenaire musical de confiance</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="footer_quicklinks">Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil" data-translate="nav_home">Accueil</a></li>
+                        <li><a href="#produits" data-translate="nav_products">Nos Instruments</a></li>
+                        <li><a href="#apropos" data-translate="nav_about">À Propos</a></li>
+                        <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-translate="footer_follow">Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1QrKBQMgeU/" target="_blank" class="social-btn facebook">
+                            📘 Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KOSI Music. <span data-translate="footer_rights">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <script src="config.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
