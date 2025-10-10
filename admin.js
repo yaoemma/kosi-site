@@ -571,27 +571,55 @@ function saveContactInfo() {
 
 // Settings Management
 function changePassword(currentPassword, newPassword, confirmPassword) {
-    const credentials = JSON.parse(localStorage.getItem(STORAGE_KEYS.CREDENTIALS));
-    
-    if (currentPassword !== credentials.password) {
-        showNotification('Le mot de passe actuel est incorrect', 'error');
+    try {
+        const credentialsStr = localStorage.getItem(STORAGE_KEYS.CREDENTIALS);
+        
+        if (!credentialsStr) {
+            showNotification('Erreur: Identifiants non trouvés. Réinitialisez les données.', 'error');
+            return false;
+        }
+        
+        const credentials = JSON.parse(credentialsStr);
+        
+        if (currentPassword !== credentials.password) {
+            showNotification('Le mot de passe actuel est incorrect', 'error');
+            return false;
+        }
+        
+        if (newPassword !== confirmPassword) {
+            showNotification('Les nouveaux mots de passe ne correspondent pas', 'error');
+            return false;
+        }
+        
+        if (newPassword.length < 6) {
+            showNotification('Le nouveau mot de passe doit contenir au moins 6 caractères', 'error');
+            return false;
+        }
+        
+        // Mettre à jour le mot de passe
+        credentials.password = newPassword;
+        localStorage.setItem(STORAGE_KEYS.CREDENTIALS, JSON.stringify(credentials));
+        
+        // Vérifier que la sauvegarde a réussi
+        const savedCreds = JSON.parse(localStorage.getItem(STORAGE_KEYS.CREDENTIALS));
+        if (savedCreds.password === newPassword) {
+            showNotification('✅ Mot de passe changé avec succès ! Utilisez-le lors de votre prochaine connexion.', 'success');
+            
+            // Afficher confirmation
+            setTimeout(() => {
+                alert('Mot de passe changé !\n\nNouveau mot de passe : ' + newPassword + '\n\n⚠️ Notez-le dans un endroit sûr !');
+            }, 500);
+            
+            return true;
+        } else {
+            showNotification('Erreur lors de la sauvegarde. Réessayez.', 'error');
+            return false;
+        }
+    } catch (error) {
+        console.error('Erreur changement de mot de passe:', error);
+        showNotification('Erreur technique: ' + error.message, 'error');
         return false;
     }
-    
-    if (newPassword !== confirmPassword) {
-        showNotification('Les nouveaux mots de passe ne correspondent pas', 'error');
-        return false;
-    }
-    
-    if (newPassword.length < 6) {
-        showNotification('Le nouveau mot de passe doit contenir au moins 6 caractères', 'error');
-        return false;
-    }
-    
-    credentials.password = newPassword;
-    localStorage.setItem(STORAGE_KEYS.CREDENTIALS, JSON.stringify(credentials));
-    showNotification('Mot de passe changé avec succès', 'success');
-    return true;
 }
 
 function resetProducts() {
