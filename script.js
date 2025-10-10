@@ -4,6 +4,47 @@ const navMenu = document.querySelector('.nav-menu');
 const contactForm = document.getElementById('contactForm');
 const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
 
+// ===== VISITOR TRACKING =====
+// Enregistre chaque visite pour les statistiques du panneau admin
+(function trackVisit() {
+    const STATS_KEY = 'kosiMusic_stats';
+    const today = new Date().toISOString().split('T')[0];
+    const now = new Date().toISOString();
+    
+    // Récupérer ou initialiser les stats
+    let stats = JSON.parse(localStorage.getItem(STATS_KEY)) || {
+        totalVisits: 0,
+        uniqueVisitors: 0,
+        firstVisit: now,
+        lastVisit: now,
+        dailyStats: {}
+    };
+    
+    // Incrémenter les visites totales
+    stats.totalVisits++;
+    stats.lastVisit = now;
+    
+    // Stats quotidiennes
+    if (!stats.dailyStats[today]) {
+        stats.dailyStats[today] = {
+            visits: 0,
+            uniqueVisitors: 0
+        };
+    }
+    stats.dailyStats[today].visits++;
+    
+    // Détecter un nouveau visiteur unique (simplifié)
+    const visitorKey = 'kosiMusic_visitor_' + today;
+    if (!sessionStorage.getItem(visitorKey)) {
+        sessionStorage.setItem(visitorKey, 'true');
+        stats.uniqueVisitors++;
+        stats.dailyStats[today].uniqueVisitors++;
+    }
+    
+    // Sauvegarder
+    localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+})();
+
 // Mobile Menu
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -178,83 +219,93 @@ let currentImageIndex = 0;
 const totalImages = 75;
 let isZoomed = false;
 
-// Array of all gallery images
+// Array of all gallery images - Organisé par catégories
 const galleryImages = [
-    'images/gallery/WhatsApp Image 2025-09-30 à 23.40.12_8c6b621a.jpg',
-    'images/gallery/WhatsApp Image 2025-09-30 à 23.40.13_117752ed.jpg',
-    'images/gallery/WhatsApp Image 2025-09-30 à 23.40.13_5aeafeb6.jpg',
-    'images/gallery/WhatsApp Image 2025-09-30 à 23.44.42_ca82312a.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.26.58_664d29e7.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_17be6d7b.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_304abf84.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_51a2f2b7.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_4d9b1410.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_57eebf53.jpg',
+    // Guitares (0-4)
+    'images/gallery/guitare.jpg.jpg',
+    'images/gallery/guitare.jpg (2).jpg',
+    'images/gallery/guitare.jpg (3).jpg',
+    'images/gallery/guitare.jpg (4).jpg',
+    'images/gallery/guitare.jpg (5).jpg',
+    // Pianos (5-10)
+    'images/gallery/piano.jpg.jpg',
+    'images/gallery/piano.jpg (2).jpg',
+    'images/gallery/piano.jpg (3).jpg',
+    'images/gallery/piano.jpg (4).jpg',
+    'images/gallery/piano.jpg (5).jpg',
+    'images/gallery/piano.jpg (6).jpg',
+    // Batteries (11-15)
+    'images/gallery/batterie.jpg.jpg',
+    'images/gallery/batterie.jpg (2).jpg',
+    'images/gallery/batterie.jpg (3).jpg',
+    'images/gallery/batterie.jpg (4).jpg',
+    'images/gallery/batterie.jpg (5).jpg',
+    // Microphones (16-29)
+    'images/gallery/microphone.jpg.jpg',
+    'images/gallery/microphone.jpg (2).jpg',
+    'images/gallery/microphone.jpg (3).jpg',
+    'images/gallery/microphone.jpg (4).jpg',
+    'images/gallery/microphone.jpg (5).jpg',
+    'images/gallery/microphone.jpg (6).jpg',
+    'images/gallery/microphone.jpg (7).jpg',
+    'images/gallery/microphone.jpg (8).jpg',
+    'images/gallery/microphone.jpg (9).jpg',
+    'images/gallery/microphone.jpg (10).jpg',
+    'images/gallery/microphone.jpg (11).jpg',
+    'images/gallery/microphone.jpg (12).jpg',
+    'images/gallery/microphone.jpg (13).jpg',
+    'images/gallery/microphone.jpg (14).jpg',
+    // Saxophones (30)
+    'images/gallery/saxophone.jpg.jpg',
+    // Baffles (31-46)
+    'images/gallery/baffle.jpg.jpg',
+    'images/gallery/baffle.jpg (2).jpg',
+    'images/gallery/baffle.jpg (3).jpg',
+    'images/gallery/baffle.jpg (4).jpg',
+    'images/gallery/baffle.jpg (5).jpg',
+    'images/gallery/baffle.jpg (6).jpg',
+    'images/gallery/baffle.jpg (7).jpg',
+    'images/gallery/baffle.jpg (8).jpg',
+    'images/gallery/baffle.jpg (9).jpg',
+    'images/gallery/baffle.jpg (10).jpg',
+    'images/gallery/baffle.jpg (11).jpg',
+    'images/gallery/baffle.jpg (12).jpg',
+    'images/gallery/baffle.jpg (13).jpg',
+    'images/gallery/baffle.jpg (14).jpg',
+    'images/gallery/baffle.jpg (15).jpg',
+    'images/gallery/baffle.jpg (16).jpg',
+    // Tables de mixage (47-55)
+    'images/gallery/table-mixage.jpg.jpg',
+    'images/gallery/table-mixage.jpg (2).jpg',
+    'images/gallery/table-mixage.jpg (3).jpg',
+    'images/gallery/table-mixage.jpg (4).jpg',
+    'images/gallery/table-mixage.jpg (5).jpg',
+    'images/gallery/table-mixage.jpg (6).jpg',
+    'images/gallery/table-mixage.jpg (7).jpg',
+    'images/gallery/table-mixage.jpg (8).jpg',
+    'images/gallery/table-mixage.jpg (9).jpg',
+    // Amplificateurs (56-61)
+    'images/gallery/amplificateur.jpg.jpg',
+    'images/gallery/amplificateur.jpg (2).jpg',
+    'images/gallery/amplificateur.jpg (3).jpg',
+    'images/gallery/amplificateur.jpg (4).jpg',
+    'images/gallery/amplificateur.jpg (5).jpg',
+    'images/gallery/amplificateur.jpg (6).jpg',
+    // Tam-tams (62-64)
+    'images/gallery/tam-tam.jpg.jpg',
+    'images/gallery/tam-tam.jpg (2).jpg',
+    'images/gallery/tam-tam.jpg (3).jpg',
+    // Autres (65-74)
     'images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_e4a0a928.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_93657aa9.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_953b3eff.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_e7f690c5.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_f8eb515b.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_4e2257b9.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_6e104a13.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_6fe50b05.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.04_5e59da8e.jpg',
-    'images/gallery/WhatsApp Image 2025-10-01 à 00.27.04_8fc2e9a1.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.34_aea232c3.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.35_48af720c.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.35_58377018.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.35_90244f78.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.36_c7edb1ca.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.38_6209369b.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.38_ca826b02.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.39_2a729887.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.39_e54fa16f.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.40_cbb1bcd0.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.41_43ad1dc7.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.41_87d8cf5b.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.42_a2de4ec2.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.43_372db963.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.43_f91715de.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.46_449b40b5.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.47_fbd33e88.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.48_9e7333e9.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.48_9fafcb34.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.49_ac337d19.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.49_dcdc65a4.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.50_69d7ea0c.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.50_cd545b25.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.50_d253ae76.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.51_23be45ea.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.51_cb545b4c.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.52_01f1b881.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.52_0c163f3d.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.52_61336aa5.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_6380f548.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_db56d44f.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_eefb38ba.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_ff20cd23.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.29.55_c21a3186.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.56_15097fdd.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.56_c0715cb8.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.29.56_f3f6ec5d.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.57_09b54b60.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.57_b7a43a01.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.58_3953cd0f.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.58_3d59095a.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.58_dbc1683e.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.29.59_4905e5b2.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.29.59_5f9c2060.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.29.59_8ceb254b.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.30.00_5d583f52.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.30.00_abb48032.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.30.00_bc2a69e9.jpg',
     'images/gallery/WhatsApp Image 2025-10-04 à 21.30.01_01f73128.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.30.01_17aae016.jpg',
-    'images/gallery/WhatsApp Image 2025-10-04 à 21.30.01_94e4187e.jpg',
-    'images/gallery/WhatsApp Image 2025-10-06 à 08.50.49_b04bd894.jpg',
-    'images/gallery/WhatsApp Image 2025-10-06 à 08.50.50_8c089f29.jpg',
-    'images/gallery/WhatsApp Image 2025-10-06 à 08.50.50_9bb58c3c.jpg',
-    'images/gallery/WhatsApp Image 2025-10-06 à 08.51.36_b7bb18f1.jpg'
+    'images/gallery/WhatsApp Image 2025-10-04 à 21.30.01_94e4187e.jpg'
 ];
 
 // Open lightbox
@@ -346,3 +397,42 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// ===== FILTRAGE DE LA GALERIE =====
+// Fonction de filtrage de la galerie par catégorie
+function filterGallery(category) {
+    // Scroll vers la galerie
+    const gallerySection = document.getElementById('galerie');
+    if (gallerySection) {
+        gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Attendre que le scroll soit terminé avant de filtrer
+    setTimeout(() => {
+        const items = document.querySelectorAll('.gallery-image-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+        
+        // Mettre à jour les boutons actifs
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('onclick').includes(category)) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Filtrer les images
+        items.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            
+            if (category === 'all' || itemCategory === category) {
+                item.style.display = 'block';
+                item.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }, 500);
+}
+
+// Rendre la fonction accessible globalement
+window.filterGallery = filterGallery;

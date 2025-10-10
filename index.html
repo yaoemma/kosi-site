@@ -70,7 +70,7 @@
                     <div class="product-icon">🎸</div>
                     <h3 data-translate="product_1_name">Guitare Électrique</h3>
                     <p data-translate="product_1_desc">Guitare électrique professionnelle avec son exceptionnel</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <button class="product-contact-btn" onclick="filterGallery('guitare')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
                 
                 <!-- Piano Numérique -->
@@ -78,7 +78,7 @@
                     <div class="product-icon">🎹</div>
                     <h3 data-translate="product_2_name">Piano Numérique</h3>
                     <p data-translate="product_2_desc">Piano numérique 88 touches avec effets intégrés</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <button class="product-contact-btn" onclick="filterGallery('piano')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
                 
                 <!-- Batterie Électronique -->
@@ -86,7 +86,7 @@
                     <div class="product-icon">🥁</div>
                     <h3 data-translate="product_3_name">Batterie Électronique</h3>
                     <p data-translate="product_3_desc">Batterie électronique complète avec pads sensibles</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <button class="product-contact-btn" onclick="filterGallery('batterie')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
                 
                 <!-- Microphone Studio -->
@@ -94,7 +94,7 @@
                     <div class="product-icon">🎤</div>
                     <h3 data-translate="product_4_name">Microphone Studio</h3>
                     <p data-translate="product_4_desc">Microphone à condensateur pour enregistrement professionnel</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <button class="product-contact-btn" onclick="filterGallery('microphone')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
                 
                 <!-- Casque Audio Pro -->
@@ -102,23 +102,15 @@
                     <div class="product-icon">🎧</div>
                     <h3 data-translate="product_5_name">Casque Audio Pro</h3>
                     <p data-translate="product_5_desc">Casque audio professionnel avec réduction de bruit</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <button class="product-contact-btn" onclick="filterGallery('casque')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
                 
-                <!-- Interface Audio -->
+                <!-- Table de Mixage -->
                 <div class="product-item">
-                    <div class="product-icon">🎛️</div>
-                    <h3 data-translate="product_6_name">Interface Audio</h3>
-                    <p data-translate="product_6_desc">Interface audio USB 2 canaux pour home studio</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
-                </div>
-                
-                <!-- Violon Acoustique -->
-                <div class="product-item">
-                    <div class="product-icon">🎻</div>
-                    <h3 data-translate="product_10_name">Violon Acoustique</h3>
-                    <p data-translate="product_10_desc">Violon acoustique 4/4 avec étui et archet</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <div class="product-icon">🎚️</div>
+                    <h3 data-translate="product_6_name">Table de Mixage</h3>
+                    <p data-translate="product_6_desc">Table de mixage professionnelle multi-canaux</p>
+                    <button class="product-contact-btn" onclick="filterGallery('mixage')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
                 
                 <!-- Saxophone Alto -->
@@ -126,249 +118,299 @@
                     <div class="product-icon">🎷</div>
                     <h3 data-translate="product_11_name">Saxophone Alto</h3>
                     <p data-translate="product_11_desc">Saxophone alto professionnel en laiton</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <button class="product-contact-btn" onclick="filterGallery('saxophone')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
                 
-                <!-- Enceintes Studio -->
+                <!-- Baffle -->
                 <div class="product-item">
-                    <div class="product-icon">🔊</div>
-                    <h3 data-translate="product_12_name">Enceintes Studio</h3>
-                    <p data-translate="product_12_desc">Paire d'enceintes monitoring pour studio</p>
-                    <a href="#contact" class="product-contact-btn" data-translate="contact_btn">Nous Contacter</a>
+                    <div class="product-icon">📢</div>
+                    <h3 data-translate="product_12_name">Baffle</h3>
+                    <p data-translate="product_12_desc">Baffle professionnel haute puissance</p>
+                    <button class="product-contact-btn" onclick="filterGallery('baffle')" data-translate="view_gallery_btn">Voir la galerie</button>
+                </div>
+                
+                <!-- Amplificateur -->
+                <div class="product-item">
+                    <div class="product-icon">📻</div>
+                    <h3 data-translate="product_13_name">Amplificateur</h3>
+                    <p data-translate="product_13_desc">Amplificateur puissant pour instruments</p>
+                    <button class="product-contact-btn" onclick="filterGallery('amplificateur')" data-translate="view_gallery_btn">Voir la galerie</button>
+                </div>
+                
+                <!-- Tam-tam -->
+                <div class="product-item">
+                    <div class="product-icon">🪘</div>
+                    <h3 data-translate="product_14_name">Tam-tam</h3>
+                    <p data-translate="product_14_desc">Tam-tam traditionnel de qualité professionnelle</p>
+                    <button class="product-contact-btn" onclick="filterGallery('tamtam')" data-translate="view_gallery_btn">Voir la galerie</button>
                 </div>
         </div>
     </section>
 
     <!-- Instruments Gallery Images -->
-    <section class="images-gallery-section">
+    <section class="images-gallery-section" id="galerie">
         <div class="container">
             <h2 class="section-title" data-translate="gallery_images_title">Galerie d'Instruments</h2>
             <p class="gallery-images-subtitle" data-translate="gallery_images_subtitle">Découvrez quelques instruments de musique</p>
+            
+            <!-- Boutons de filtrage -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterGallery('all')" data-translate="filter_all">Tous</button>
+                <button class="filter-btn" onclick="filterGallery('guitare')">🎸 <span data-translate="filter_guitare">Guitares</span></button>
+                <button class="filter-btn" onclick="filterGallery('piano')">🎹 <span data-translate="filter_piano">Pianos</span></button>
+                <button class="filter-btn" onclick="filterGallery('batterie')">🥁 <span data-translate="filter_batterie">Batteries</span></button>
+                <button class="filter-btn" onclick="filterGallery('microphone')">🎤 <span data-translate="filter_microphone">Micros</span></button>
+                <button class="filter-btn" onclick="filterGallery('saxophone')">🎷 <span data-translate="filter_saxophone">Saxophones</span></button>
+                <button class="filter-btn" onclick="filterGallery('baffle')">📢 <span data-translate="filter_baffle">Baffles</span></button>
+                <button class="filter-btn" onclick="filterGallery('mixage')">🎚️ <span data-translate="filter_mixage">Tables Mixage</span></button>
+                <button class="filter-btn" onclick="filterGallery('amplificateur')">📻 <span data-translate="filter_amplificateur">Amplis</span></button>
+                <button class="filter-btn" onclick="filterGallery('tamtam')">🪘 <span data-translate="filter_tamtam">Tam-tams</span></button>
+            </div>
+            
             <div class="images-gallery-grid">
-                <div class="gallery-image-item" onclick="openLightbox(0)">
-                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.40.12_8c6b621a.jpg" alt="Instrument">
+                <!-- GUITARES (5 images) -->
+                <div class="gallery-image-item" data-category="guitare" onclick="openLightbox(0)">
+                    <img src="images/gallery/guitare.jpg.jpg" alt="Guitare">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(1)">
-                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.40.13_117752ed.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="guitare" onclick="openLightbox(1)">
+                    <img src="images/gallery/guitare.jpg (2).jpg" alt="Guitare">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(2)">
-                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.40.13_5aeafeb6.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="guitare" onclick="openLightbox(2)">
+                    <img src="images/gallery/guitare.jpg (3).jpg" alt="Guitare">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(3)">
-                    <img src="images/gallery/WhatsApp Image 2025-09-30 à 23.44.42_ca82312a.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="guitare" onclick="openLightbox(3)">
+                    <img src="images/gallery/guitare.jpg (4).jpg" alt="Guitare">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(4)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.26.58_664d29e7.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="guitare" onclick="openLightbox(4)">
+                    <img src="images/gallery/guitare.jpg (5).jpg" alt="Guitare">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(5)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_17be6d7b.jpg" alt="Instrument">
+                
+                <!-- PIANOS (6 images) -->
+                <div class="gallery-image-item" data-category="piano" onclick="openLightbox(5)">
+                    <img src="images/gallery/piano.jpg.jpg" alt="Piano">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(6)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_304abf84.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="piano" onclick="openLightbox(6)">
+                    <img src="images/gallery/piano.jpg (2).jpg" alt="Piano">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(7)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.00_51a2f2b7.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="piano" onclick="openLightbox(7)">
+                    <img src="images/gallery/piano.jpg (3).jpg" alt="Piano">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(8)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_4d9b1410.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="piano" onclick="openLightbox(8)">
+                    <img src="images/gallery/piano.jpg (4).jpg" alt="Piano">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(9)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_57eebf53.jpg" alt="Instrument">
+                <div class="gallery-image-item" data-category="piano" onclick="openLightbox(9)">
+                    <img src="images/gallery/piano.jpg (5).jpg" alt="Piano">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(10)">
+                <div class="gallery-image-item" data-category="piano" onclick="openLightbox(10)">
+                    <img src="images/gallery/piano.jpg (6).jpg" alt="Piano">
+                </div>
+                
+                <!-- BATTERIES (5 images) -->
+                <div class="gallery-image-item" data-category="batterie" onclick="openLightbox(11)">
+                    <img src="images/gallery/batterie.jpg.jpg" alt="Batterie">
+                </div>
+                <div class="gallery-image-item" data-category="batterie" onclick="openLightbox(12)">
+                    <img src="images/gallery/batterie.jpg (2).jpg" alt="Batterie">
+                </div>
+                <div class="gallery-image-item" data-category="batterie" onclick="openLightbox(13)">
+                    <img src="images/gallery/batterie.jpg (3).jpg" alt="Batterie">
+                </div>
+                <div class="gallery-image-item" data-category="batterie" onclick="openLightbox(14)">
+                    <img src="images/gallery/batterie.jpg (4).jpg" alt="Batterie">
+                </div>
+                <div class="gallery-image-item" data-category="batterie" onclick="openLightbox(15)">
+                    <img src="images/gallery/batterie.jpg (5).jpg" alt="Batterie">
+                </div>
+                
+                <!-- MICROPHONES (14 images) -->
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(16)">
+                    <img src="images/gallery/microphone.jpg.jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(17)">
+                    <img src="images/gallery/microphone.jpg (2).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(18)">
+                    <img src="images/gallery/microphone.jpg (3).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(19)">
+                    <img src="images/gallery/microphone.jpg (4).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(20)">
+                    <img src="images/gallery/microphone.jpg (5).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(21)">
+                    <img src="images/gallery/microphone.jpg (6).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(22)">
+                    <img src="images/gallery/microphone.jpg (7).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(23)">
+                    <img src="images/gallery/microphone.jpg (8).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(24)">
+                    <img src="images/gallery/microphone.jpg (9).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(25)">
+                    <img src="images/gallery/microphone.jpg (10).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(26)">
+                    <img src="images/gallery/microphone.jpg (11).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(27)">
+                    <img src="images/gallery/microphone.jpg (12).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(28)">
+                    <img src="images/gallery/microphone.jpg (13).jpg" alt="Microphone">
+                </div>
+                <div class="gallery-image-item" data-category="microphone" onclick="openLightbox(29)">
+                    <img src="images/gallery/microphone.jpg (14).jpg" alt="Microphone">
+                </div>
+                
+                <!-- SAXOPHONES (1 image) -->
+                <div class="gallery-image-item" data-category="saxophone" onclick="openLightbox(30)">
+                    <img src="images/gallery/saxophone.jpg.jpg" alt="Saxophone">
+                </div>
+                
+                <!-- BAFFLES (16 images) -->
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(31)">
+                    <img src="images/gallery/baffle.jpg.jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(32)">
+                    <img src="images/gallery/baffle.jpg (2).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(33)">
+                    <img src="images/gallery/baffle.jpg (3).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(34)">
+                    <img src="images/gallery/baffle.jpg (4).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(35)">
+                    <img src="images/gallery/baffle.jpg (5).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(36)">
+                    <img src="images/gallery/baffle.jpg (6).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(37)">
+                    <img src="images/gallery/baffle.jpg (7).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(38)">
+                    <img src="images/gallery/baffle.jpg (8).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(39)">
+                    <img src="images/gallery/baffle.jpg (9).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(40)">
+                    <img src="images/gallery/baffle.jpg (10).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(41)">
+                    <img src="images/gallery/baffle.jpg (11).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(42)">
+                    <img src="images/gallery/baffle.jpg (12).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(43)">
+                    <img src="images/gallery/baffle.jpg (13).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(44)">
+                    <img src="images/gallery/baffle.jpg (14).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(45)">
+                    <img src="images/gallery/baffle.jpg (15).jpg" alt="Baffle">
+                </div>
+                <div class="gallery-image-item" data-category="baffle" onclick="openLightbox(46)">
+                    <img src="images/gallery/baffle.jpg (16).jpg" alt="Baffle">
+                </div>
+                
+                <!-- TABLES DE MIXAGE (9 images) -->
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(47)">
+                    <img src="images/gallery/table-mixage.jpg.jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(48)">
+                    <img src="images/gallery/table-mixage.jpg (2).jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(49)">
+                    <img src="images/gallery/table-mixage.jpg (3).jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(50)">
+                    <img src="images/gallery/table-mixage.jpg (4).jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(51)">
+                    <img src="images/gallery/table-mixage.jpg (5).jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(52)">
+                    <img src="images/gallery/table-mixage.jpg (6).jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(53)">
+                    <img src="images/gallery/table-mixage.jpg (7).jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(54)">
+                    <img src="images/gallery/table-mixage.jpg (8).jpg" alt="Table de Mixage">
+                </div>
+                <div class="gallery-image-item" data-category="mixage" onclick="openLightbox(55)">
+                    <img src="images/gallery/table-mixage.jpg (9).jpg" alt="Table de Mixage">
+                </div>
+                
+                <!-- AMPLIFICATEURS (6 images) -->
+                <div class="gallery-image-item" data-category="amplificateur" onclick="openLightbox(56)">
+                    <img src="images/gallery/amplificateur.jpg.jpg" alt="Amplificateur">
+                </div>
+                <div class="gallery-image-item" data-category="amplificateur" onclick="openLightbox(57)">
+                    <img src="images/gallery/amplificateur.jpg (2).jpg" alt="Amplificateur">
+                </div>
+                <div class="gallery-image-item" data-category="amplificateur" onclick="openLightbox(58)">
+                    <img src="images/gallery/amplificateur.jpg (3).jpg" alt="Amplificateur">
+                </div>
+                <div class="gallery-image-item" data-category="amplificateur" onclick="openLightbox(59)">
+                    <img src="images/gallery/amplificateur.jpg (4).jpg" alt="Amplificateur">
+                </div>
+                <div class="gallery-image-item" data-category="amplificateur" onclick="openLightbox(60)">
+                    <img src="images/gallery/amplificateur.jpg (5).jpg" alt="Amplificateur">
+                </div>
+                <div class="gallery-image-item" data-category="amplificateur" onclick="openLightbox(61)">
+                    <img src="images/gallery/amplificateur.jpg (6).jpg" alt="Amplificateur">
+                </div>
+                
+                <!-- TAM-TAMS (3 images) -->
+                <div class="gallery-image-item" data-category="tamtam" onclick="openLightbox(62)">
+                    <img src="images/gallery/tam-tam.jpg.jpg" alt="Tam-tam">
+                </div>
+                <div class="gallery-image-item" data-category="tamtam" onclick="openLightbox(63)">
+                    <img src="images/gallery/tam-tam.jpg (2).jpg" alt="Tam-tam">
+                </div>
+                <div class="gallery-image-item" data-category="tamtam" onclick="openLightbox(64)">
+                    <img src="images/gallery/tam-tam.jpg (3).jpg" alt="Tam-tam">
+                </div>
+                
+                <!-- AUTRES INSTRUMENTS (10 images) -->
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(65)">
                     <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.01_e4a0a928.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(11)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_93657aa9.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(12)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_953b3eff.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(13)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_e7f690c5.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(14)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.02_f8eb515b.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(15)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_4e2257b9.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(16)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_6e104a13.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(17)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.03_6fe50b05.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(18)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.04_5e59da8e.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(19)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-01 à 00.27.04_8fc2e9a1.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(20)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.34_aea232c3.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(21)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.35_48af720c.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(22)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.35_58377018.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(23)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.35_90244f78.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(24)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.36_c7edb1ca.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(25)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.38_6209369b.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(26)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.38_ca826b02.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(27)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.39_2a729887.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(28)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.39_e54fa16f.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(29)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.40_cbb1bcd0.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(30)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.41_43ad1dc7.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(31)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.41_87d8cf5b.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(32)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.42_a2de4ec2.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(33)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.43_372db963.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(34)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.43_f91715de.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(35)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.46_449b40b5.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(36)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.47_fbd33e88.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(37)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.48_9e7333e9.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(38)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.48_9fafcb34.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(39)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.49_ac337d19.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(40)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.49_dcdc65a4.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(41)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.50_69d7ea0c.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(42)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.50_cd545b25.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(43)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.50_d253ae76.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(44)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.51_23be45ea.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(45)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.51_cb545b4c.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(46)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.52_01f1b881.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(47)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.52_0c163f3d.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(48)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.52_61336aa5.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(49)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_6380f548.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(50)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_db56d44f.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(51)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_eefb38ba.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(52)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.54_ff20cd23.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(53)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(66)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.55_c21a3186.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(54)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.56_15097fdd.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(55)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.56_c0715cb8.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(56)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(67)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.56_f3f6ec5d.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(57)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.57_09b54b60.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(58)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.57_b7a43a01.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(59)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.58_3953cd0f.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(60)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.58_3d59095a.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(61)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.58_dbc1683e.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(62)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(68)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.59_4905e5b2.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(63)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.59_5f9c2060.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(64)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(69)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.29.59_8ceb254b.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(65)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(70)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.30.00_5d583f52.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(66)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(71)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.30.00_abb48032.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(67)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(72)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.30.00_bc2a69e9.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(68)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(73)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.30.01_01f73128.jpg" alt="Instrument">
                 </div>
-                <div class="gallery-image-item" onclick="openLightbox(69)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.30.01_17aae016.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(70)">
+                <div class="gallery-image-item" data-category="all" onclick="openLightbox(74)">
                     <img src="images/gallery/WhatsApp Image 2025-10-04 à 21.30.01_94e4187e.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(71)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-06 à 08.50.49_b04bd894.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(72)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-06 à 08.50.50_8c089f29.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(73)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-06 à 08.50.50_9bb58c3c.jpg" alt="Instrument">
-                </div>
-                <div class="gallery-image-item" onclick="openLightbox(74)">
-                    <img src="images/gallery/WhatsApp Image 2025-10-06 à 08.51.36_b7bb18f1.jpg" alt="Instrument">
                 </div>
             </div>
         </div>
@@ -489,6 +531,9 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 KOSI Music. <span data-translate="footer_rights">Tous droits réservés.</span></p>
+                <p style="margin-top: 0.5rem; opacity: 0.5; font-size: 0.8rem;">
+                    <a href="admin.html" style="color: inherit; text-decoration: none;">⚙️ Administration</a>
+                </p>
             </div>
         </div>
     </footer>

@@ -5,31 +5,57 @@ Bienvenue sur votre site web professionnel pour la vente d'instruments de musiqu
 ## 🎵 Fonctionnalités
 
 - **Design Moderne et Responsive** : Interface utilisateur attrayante qui s'adapte à tous les écrans (ordinateur, tablette, mobile)
-- **Catalogue de Produits** : Affichage dynamique de vos articles avec système de filtrage par catégorie
-- **Panier d'Achat** : Système de panier fonctionnel avec ajout/retrait de produits
+- **Catalogue de Produits** : Affichage dynamique de vos articles
+- **Galerie d'Images** : Plus de 75 photos d'instruments de musique
+- **Multilingue** : Support Français/Anglais avec changement de langue instantané
 - **Navigation Fluide** : Défilement fluide entre les sections
-- **Formulaire de Contact** : Section contact pour que vos clients puissent vous joindre
+- **Formulaire de Contact** : Envoi par Email (EmailJS) ou WhatsApp
 - **Animations** : Animations subtiles pour une meilleure expérience utilisateur
+- **🆕 Panneau d'Administration** : Gérez votre site sans toucher au code !
 
 ## 📁 Structure des Fichiers
 
 ```
 KOSI/
 │
-├── index.html          # Page principale
-├── styles.css          # Styles et design
-├── script.js           # Fonctionnalités interactives
-├── config.js           # Configuration (WhatsApp, téléphone, adresse)
-└── README.md          # Documentation
+├── index.html                      # Page principale du site
+├── styles.css                      # Styles et design
+├── script.js                       # Fonctionnalités interactives
+├── config.js                       # Configuration (WhatsApp, téléphone, email)
+├── translations.js                 # Traductions FR/EN
+│
+├── admin.html                      # 🆕 Panneau d'administration
+├── admin.css                       # 🆕 Styles du panneau admin
+├── admin.js                        # 🆕 Fonctionnalités du panneau admin
+│
+├── images/                         # Dossier des images
+│   └── gallery/                    # Images de la galerie (75 photos)
+│
+└── README.md                       # Documentation principale
 ```
 
 ## 🚀 Comment Utiliser
 
+### Option 1 : Utiliser le Panneau d'Administration (Recommandé) 🆕
+
+1. **Ouvrir le panneau** : Double-cliquez sur `admin.html`
+2. **Se connecter** :
+   - Utilisateur : `admin`
+   - Mot de passe : `kosi2025`
+3. **⚠️ Changez le mot de passe** immédiatement après la première connexion
+4. **Gérer votre site** sans toucher au code :
+   - Voir les statistiques de visite
+   - Ajouter/modifier/supprimer des produits
+   - Gérer la galerie d'images (scanner/ajouter/supprimer/catégoriser)
+   - Modifier les informations de contact
+   - Configurer WhatsApp, email, réseaux sociaux
+
+### Option 2 : Modification Manuelle
+
 1. **Ouvrir le Site** : Double-cliquez sur `index.html` pour ouvrir le site dans votre navigateur
-2. **⚠️ IMPORTANT - Configurer WhatsApp** : Ouvrez `config.js` et remplacez `225XXXXXXXXXX` par votre vrai numéro WhatsApp
-3. **Personnaliser les Produits** : Éditez le fichier `script.js` pour modifier les produits
-4. **Modifier les Couleurs** : Ajustez les couleurs dans `styles.css` (variables CSS ligne 10-19)
-5. **Ajouter Vos Images** : Remplacez les emojis par vos propres images de produits
+2. **⚠️ IMPORTANT - Configurer WhatsApp** : Ouvrez `config.js` et remplacez le numéro WhatsApp
+3. **Personnaliser les Produits** : Éditez le fichier `index.html` pour modifier les produits
+4. **Modifier les Couleurs** : Ajustez les couleurs dans `styles.css`
 
 ## ✏️ Personnalisation
 
@@ -121,9 +147,22 @@ Créez un dossier `images/` et remplacez les emojis par :
 - JavaScript (vanilla)
 - Google Fonts (Poppins)
 
+## 🎛️ Panneau d'Administration
+
+Le panneau d'administration vous permet de gérer facilement votre site :
+
+**Fonctionnalités :**
+- 📊 Statistiques de visite en temps réel
+- 📦 Gestion des produits (ajouter/modifier/supprimer)
+- 🖼️ Gestion de la galerie (scanner/catégoriser/supprimer)
+- 📧 Modification des informations de contact
+- 🔐 Changement de mot de passe
+
+**Accès :** Ouvrez `admin.html` et connectez-vous avec `admin` / `kosi2025`
+
 ## 📞 Support
 
-Pour toute question ou personnalisation supplémentaire, n'hésitez pas à modifier le code selon vos besoins !
+Pour toute question ou personnalisation supplémentaire, n'hésitez pas à consulter les guides ou à modifier le code selon vos besoins !
 
 ## 🚀 Prochaines Étapes
 

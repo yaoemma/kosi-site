@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - KOSI Music</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>🎵 Administration KOSI Music</h1>
+                <p>Connectez-vous pour gérer votre site</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" placeholder="admin" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+                <div id="login-error" class="error-message"></div>
+            </form>
+            <div class="login-info">
+                <p><strong>🔐 Par défaut :</strong></p>
+                <p>Utilisateur : <code>admin</code></p>
+                <p>Mot de passe : <code>kosi2025</code></p>
+                <p class="warning">⚠️ Changez le mot de passe après la première connexion !</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="admin-dashboard" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🎵 KOSI Admin</h2>
+                <p id="admin-username">admin</p>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-section="dashboard">
+                    📊 Tableau de bord
+                </button>
+                <button class="nav-btn" data-section="products">
+                    📦 Produits
+                </button>
+                <button class="nav-btn" data-section="gallery">
+                    🖼️ Galerie
+                </button>
+                <button class="nav-btn" data-section="contact">
+                    📧 Contact
+                </button>
+                <button class="nav-btn" data-section="settings">
+                    ⚙️ Paramètres
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.html" target="_blank" class="btn btn-secondary">👁️ Voir le site</a>
+                <button id="logout-btn" class="btn btn-danger">🚪 Déconnexion</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1 id="section-title">Tableau de bord</h1>
+                <div class="header-actions">
+                    <button id="save-changes-btn" class="btn btn-success">💾 Sauvegarder les modifications</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="content-section active">
+                <div class="dashboard-grid">
+                    <!-- Stats Cards -->
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3>Visiteurs Totaux</h3>
+                            <p class="stat-value" id="total-visitors">0</p>
+                            <small>Depuis la création</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-info">
+                            <h3>Visiteurs Aujourd'hui</h3>
+                            <p class="stat-value" id="today-visitors">0</p>
+                            <small id="today-date"></small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">📆</div>
+                        <div class="stat-info">
+                            <h3>Cette Semaine</h3>
+                            <p class="stat-value" id="week-visitors">0</p>
+                            <small>7 derniers jours</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-info">
+                            <h3>Ce Mois</h3>
+                            <p class="stat-value" id="month-visitors">0</p>
+                            <small id="current-month"></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-details">
+                    <div class="stats-section">
+                        <h3>📈 Statistiques Détaillées</h3>
+                        <div class="stats-table-container">
+                            <table class="stats-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Nombre de visites</th>
+                                        <th>Visiteurs uniques</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="stats-table-body">
+                                    <tr>
+                                        <td colspan="3" style="text-align: center; opacity: 0.5;">Chargement...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="stats-section">
+                        <h3>ℹ️ Informations</h3>
+                        <div class="info-box">
+                            <p><strong>📅 Premier visiteur :</strong> <span id="first-visit-date">-</span></p>
+                            <p><strong>🕐 Dernière visite :</strong> <span id="last-visit-date">-</span></p>
+                            <p><strong>📊 Moyenne par jour :</strong> <span id="avg-per-day">0</span> visiteurs</p>
+                            <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); opacity: 0.7; font-size: 0.9rem;">
+                                💡 <em>Les statistiques sont collectées automatiquement depuis l'ouverture du site.</em>
+                            </p>
+                            <button id="reset-stats-btn" class="btn btn-warning" style="width: 100%; margin-top: 1rem;">
+                                🔄 Réinitialiser les statistiques
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products-section" class="content-section">
+                <div class="section-header">
+                    <h2>Liste des Produits</h2>
+                    <button id="add-product-btn" class="btn btn-primary">➕ Ajouter un produit</button>
+                </div>
+                <div id="products-list" class="items-grid"></div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery-section" class="content-section">
+                <div class="section-header">
+                    <h2>Gestion de la Galerie du Site</h2>
+                    <div class="header-actions">
+                        <button id="scan-gallery-btn" class="btn btn-primary">🔄 Scanner le dossier gallery</button>
+                        <input type="file" id="add-new-image" accept="image/*" multiple hidden>
+                        <button id="add-image-btn" class="btn btn-primary">➕ Ajouter des images</button>
+                        <button id="generate-code-btn" class="btn btn-success">📝 Générer le code HTML/JS</button>
+                    </div>
+                </div>
+                
+                <div class="gallery-info-box">
+                    <p><strong>📁 Dossier scanné :</strong> <code>images/gallery/</code></p>
+                    <p><strong>📊 Total d'images :</strong> <span id="total-images-count">0</span></p>
+                    <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">
+                        💡 <em>Scannez le dossier pour voir toutes vos images. Assignez des catégories, supprimez ou ajoutez des images, puis générez le code à copier dans index.html et script.js</em>
+                    </p>
+                    <p style="margin-top: 0.5rem; opacity: 0.7; font-size: 0.85rem; color: var(--warning-color);">
+                        ⚠️ <strong>Important :</strong> Les images ajoutées ici seront en base64. Pour de vraies images, ajoutez-les d'abord dans le dossier <code>images/gallery/</code> puis rescannez.
+                    </p>
+                </div>
+                
+                <div id="gallery-manager" class="gallery-manager">
+                    <p style="text-align: center; opacity: 0.5; padding: 2rem;">
+                        Cliquez sur "🔄 Scanner le dossier gallery" pour commencer
+                    </p>
+                </div>
+                
+                <!-- Code Generator Modal -->
+                <div id="code-modal" class="modal">
+                    <div class="modal-content" style="max-width: 900px;">
+                        <div class="modal-header">
+                            <h2>Code Généré pour le Site</h2>
+                            <span class="modal-close code-modal-close">&times;</span>
+                        </div>
+                        <div class="modal-body" style="padding: 2rem;">
+                            <h3>📋 Instructions :</h3>
+                            <ol style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-light);">
+                                <li>Copiez le code HTML ci-dessous</li>
+                                <li>Ouvrez <code>index.html</code></li>
+                                <li>Remplacez la section galerie (entre les balises &lt;div class="images-gallery-grid"&gt;)</li>
+                                <li>Copiez le code JavaScript</li>
+                                <li>Ouvrez <code>script.js</code></li>
+                                <li>Remplacez l'array <code>galleryImages</code></li>
+                                <li>Sauvegardez et rechargez votre site !</li>
+                            </ol>
+                            
+                            <h3 style="margin-top: 2rem;">Code HTML :</h3>
+                            <textarea id="generated-html" readonly style="width: 100%; height: 300px; background: var(--darker-bg); color: var(--text-white); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem;"></textarea>
+                            <button onclick="copyToClipboard('generated-html')" class="btn btn-primary" style="margin-top: 0.5rem; width: 100%;">📋 Copier le HTML</button>
+                            
+                            <h3 style="margin-top: 2rem;">Code JavaScript (array) :</h3>
+                            <textarea id="generated-js" readonly style="width: 100%; height: 200px; background: var(--darker-bg); color: var(--text-white); border: 1px solid var(--border-color); border-radius: 10px; padding: 1rem; font-family: 'Courier New', monospace; font-size: 0.9rem;"></textarea>
+                            <button onclick="copyToClipboard('generated-js')" class="btn btn-primary" style="margin-top: 0.5rem; width: 100%;">📋 Copier le JavaScript</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact-section" class="content-section">
+                <div class="section-header">
+                    <h2>Informations de Contact</h2>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contact-info-form" class="admin-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="whatsapp-number">Numéro WhatsApp</label>
+                                <input type="text" id="whatsapp-number" placeholder="2250575252080">
+                                <small>Format: sans espaces ni +, exemple: 2250575252080</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-display">Numéro à afficher</label>
+                                <input type="text" id="phone-display" placeholder="+225 05 75 25 20 80">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-address">Email de contact</label>
+                            <input type="email" id="email-address" placeholder="contact@kosimusic.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp-message">Message WhatsApp par défaut</label>
+                            <textarea id="whatsapp-message" rows="3"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="facebook-link">Lien Facebook</label>
+                                <input type="url" id="facebook-link" placeholder="https://www.facebook.com/...">
+                            </div>
+                            <div class="form-group">
+                                <label for="tiktok-link">Lien TikTok</label>
+                                <input type="url" id="tiktok-link" placeholder="https://www.tiktok.com/...">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="content-section">
+                <div class="section-header">
+                    <h2>Paramètres du Compte</h2>
+                </div>
+                <div class="settings-container">
+                    <form id="change-password-form" class="admin-form">
+                        <h3>Changer le mot de passe</h3>
+                        <div class="form-group">
+                            <label for="current-password">Mot de passe actuel</label>
+                            <input type="password" id="current-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">Nouveau mot de passe</label>
+                            <input type="password" id="new-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmer le nouveau mot de passe</label>
+                            <input type="password" id="confirm-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">🔒 Changer le mot de passe</button>
+                    </form>
+
+                    <div class="danger-zone">
+                        <h3>⚠️ Zone dangereuse</h3>
+                        <p>Ces actions sont irréversibles. Utilisez-les avec précaution.</p>
+                        <button id="reset-products-btn" class="btn btn-warning">🔄 Réinitialiser les produits</button>
+                        <button id="reset-all-btn" class="btn btn-danger">🗑️ Réinitialiser toutes les données</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Ajouter un produit</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <form id="product-form" class="modal-form">
+                <input type="hidden" id="product-id">
+                <div class="form-group">
+                    <label for="product-icon">Icône (emoji)</label>
+                    <input type="text" id="product-icon" placeholder="🎸" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-name-fr">Nom (Français)</label>
+                    <input type="text" id="product-name-fr" placeholder="Guitare Électrique" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-name-en">Nom (Anglais)</label>
+                    <input type="text" id="product-name-en" placeholder="Electric Guitar" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-desc-fr">Description (Français)</label>
+                    <textarea id="product-desc-fr" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product-desc-en">Description (Anglais)</label>
+                    <textarea id="product-desc-en" rows="3" required>
+</textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary modal-cancel">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification-toast" class="notification-toast"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+
