@@ -103,7 +103,7 @@ if (sendWhatsAppBtn) {
         }
         
         // Format message for WhatsApp
-        const whatsappMessage = `Bonjour KOSI Music!\n\n` +
+        const whatsappMessage = `Bonjour BETHEL SONORISATION!\n\n` +
             `👤 Nom: ${name}\n` +
             `📞 Téléphone: ${phone}\n` +
             `📧 Email: ${email}\n\n` +

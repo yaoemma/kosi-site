@@ -1,4 +1,4 @@
-// Configuration du site KOSI Music
+// Configuration du site BETHEL SONORISATION
 // Modifiez ces informations selon vos besoins
 
 const CONFIG = {
@@ -10,7 +10,7 @@ const CONFIG = {
     phoneDisplay: '+225 05 75 25 20 80', // Votre numéro configuré
     
     // Message par défaut pour WhatsApp
-    whatsappMessage: 'Bonjour KOSI Music, je souhaite obtenir des informations sur vos produits.',
+    whatsappMessage: 'Bonjour BETHEL SONORISATION, je souhaite obtenir des informations sur vos produits.',
     
     // Adresse du magasin
     address: {

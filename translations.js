@@ -1,4 +1,4 @@
-// Traductions du site KOSI Music
+// Traductions du site BETHEL SONORISATION
 const translations = {
     fr: {
         // Navigation
@@ -8,7 +8,7 @@ const translations = {
         nav_contact: "Contact",
         
         // Hero Section
-        hero_title: "Bienvenue chez KOSI Music",
+        hero_title: "Bienvenue chez BETHEL SONORISATION",
         hero_subtitle: "Découvrez notre collection d'instruments et accessoires musicaux de qualité",
         hero_btn_explore: "Explorer nos produits",
         hero_btn_whatsapp: "💬 WhatsApp",
@@ -68,8 +68,8 @@ const translations = {
         product_14_desc: "Tam-tam traditionnel de qualité professionnelle",
         
         // About Section
-        about_title: "À Propos de KOSI Music",
-        about_text_1: "KOSI Music est votre destination privilégiée pour tous vos besoins musicaux. Nous offrons une sélection soigneusement choisie d'instruments, d'accessoires et d'équipements audio de haute qualité.",
+        about_title: "À Propos de BETHEL SONORISATION",
+        about_text_1: "BETHEL SONORISATION est votre destination privilégiée pour tous vos besoins musicaux. Nous offrons une sélection soigneusement choisie d'instruments, d'accessoires et d'équipements audio de haute qualité.",
         about_text_2: "Notre passion pour la musique nous pousse à fournir les meilleurs produits à nos clients, qu'ils soient débutants ou professionnels.",
         feature_1: "Produits de qualité",
         feature_2: "Magasin à Adjamé, Rue E14",
@@ -103,7 +103,7 @@ const translations = {
         nav_contact: "Contact",
         
         // Hero Section
-        hero_title: "Welcome to KOSI Music",
+        hero_title: "Welcome to BETHEL SONORISATION",
         hero_subtitle: "Discover our collection of quality musical instruments and accessories",
         hero_btn_explore: "Explore our products",
         hero_btn_whatsapp: "💬 WhatsApp",
@@ -163,8 +163,8 @@ const translations = {
         product_14_desc: "Traditional professional quality tam-tam",
         
         // About Section
-        about_title: "About KOSI Music",
-        about_text_1: "KOSI Music is your premier destination for all your musical needs. We offer a carefully selected range of high-quality instruments, accessories and audio equipment.",
+        about_title: "About BETHEL SONORISATION",
+        about_text_1: "BETHEL SONORISATION is your premier destination for all your musical needs. We offer a carefully selected range of high-quality instruments, accessories and audio equipment.",
         about_text_2: "Our passion for music drives us to provide the best products to our customers, whether beginners or professionals.",
         feature_1: "Quality products",
         feature_2: "Store at Adjamé, E14 Street",

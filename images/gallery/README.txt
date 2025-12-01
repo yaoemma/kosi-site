@@ -1,4 +1,4 @@
-📸 DOSSIER GALERIE - KOSI Music
+📸 DOSSIER GALERIE - BETHEL SONORISATION
 
 Mettez vos photos DIRECTEMENT dans ce dossier (pas de sous-dossiers) !
 

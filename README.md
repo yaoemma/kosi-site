@@ -1,4 +1,4 @@
-# KOSI Music - Site de Vente d'Articles de Musique
+# BETHEL SONORISATION - Site de Vente d'Articles de Musique
 
 Bienvenue sur votre site web professionnel pour la vente d'instruments de musique et accessoires !
 

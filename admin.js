@@ -1,4 +1,4 @@
-// Admin Panel JavaScript for KOSI Music
+// Admin Panel JavaScript for BETHEL SONORISATION
 // Storage keys
 const STORAGE_KEYS = {
     AUTH: 'kosiAdmin_auth',
@@ -115,7 +115,7 @@ function initializeDefaultData() {
             whatsappNumber: '2250575252080',
             phoneDisplay: '+225 05 75 25 20 80',
             email: 'kosinwanze2@gmail.com',
-            whatsappMessage: 'Bonjour KOSI Music, je souhaite obtenir des informations sur vos produits.',
+            whatsappMessage: 'Bonjour BETHEL SONORISATION, je souhaite obtenir des informations sur vos produits.',
             facebookLink: 'https://www.facebook.com/share/1QrKBQMgeU/',
             tiktokLink: 'https://www.tiktok.com/@austinmusic225?_t=ZM-90JrIYrkcqy&_r=1'
         };
@@ -652,7 +652,7 @@ function exportToMainSite() {
     const contact = JSON.parse(localStorage.getItem(STORAGE_KEYS.CONTACT)) || {};
     
     // Update config.js
-    const configContent = `// Configuration du site KOSI Music
+    const configContent = `// Configuration du site BETHEL SONORISATION
 // Ce fichier est généré automatiquement par le panneau d'administration
 
 const CONFIG = {
